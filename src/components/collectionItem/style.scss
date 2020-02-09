@@ -1,0 +1,42 @@
+.film-wrap {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  height: 100%;
+  padding: 5% 0;
+  text-align: center;
+  color: rgba(255, 255, 0, .8);
+  border: 1px solid rgba(255, 255, 0, .3);
+  border-radius: 5px;
+  background: rgba(0,0,0, .9);
+
+}
+
+.film-wrap:hover {
+  cursor: pointer;
+  text-decoration: none;
+  color: rgba(255, 255, 0, .8);
+  transition: 0.2s linear;
+  box-shadow:
+          0 1px 4px rgba(255, 255, 0, .3),
+          -23px 0 20px -23px rgba(255, 255, 0, .8),
+          23px 0 20px -23px rgba(255, 255, 0, .8),
+          0 0 40px rgba(255, 255, 0, .1) inset;
+}
+
+.card-title {
+  font-size: 1.4em;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.film-wrap-title {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 6em;
+}
+
+.card-body-title, .card-title, .card-subtitle {
+  color: rgba(255, 255, 0, .8);
+}
