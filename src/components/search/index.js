@@ -1,9 +1,9 @@
 import React from 'react'
-import {useDispatch, useSelector} from "react-redux";
-import {handle} from "../../services/search/actions";
-import {searchValue, films} from "../../services/globalSelectors";
+import {useDispatch, useSelector} from 'react-redux'
+import {handle} from '../../services/search/actions'
+import {searchValue, films} from '../../services/globalSelectors'
 
-import './style.scss';
+import './style.scss'
 
 export const Search = () => {
   const dispatch = useDispatch()

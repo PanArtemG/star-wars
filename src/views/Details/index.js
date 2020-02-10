@@ -33,13 +33,13 @@ export const Details = () => {
     <section className={styles.wrapper}>
       <div className='wrap '>
         <button
+          className={styles.btn}
           onClick={handleOpen}
-          style={{textDecoration: 'none', color: 'rgba(255, 255, 0, .8)'}}
         >
-          &lt; Back
+          &lt Back
         </button>
         <div className='mt-5'>
-          <h2 className=' mb-5'>"{title}"</h2>
+          <h2 className=' mb-5'>'{title}'</h2>
           <h4>Episode : #{episode_id}</h4>
           <div className=''>
             <p>{opening_crawl}</p>
@@ -71,4 +71,4 @@ export const Details = () => {
       </div>
     </section>
   )
-};
+}

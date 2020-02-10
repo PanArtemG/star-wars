@@ -1,7 +1,9 @@
 import React from 'react'
+import {useSelector} from 'react-redux'
+
+import {isOpenModal} from './services/globalSelectors'
+
 import {Collection, Details} from './views'
-import {useSelector} from "react-redux";
-import {isOpenModal} from "./services/globalSelectors";
 
 export const App = () => {
   const isOpen = useSelector(isOpenModal)
