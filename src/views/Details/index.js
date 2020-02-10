@@ -1,25 +1,30 @@
 import React, {useEffect} from 'react'
 import {useDispatch, useSelector} from 'react-redux'
-import {getPlanetsFetch, getStarshipsFetch} from "../../services/collections/operation";
-import {planets, starships} from "../../services/collections/selectors";
-import {Link} from "react-router-dom";
+
+import {getPlanetsFetch, getStarshipsFetch} from '../../services/collections/operation'
+import {reset} from '../../services/collections/actions'
+import {handleOpenModal} from '../../services/overlay/actions'
+import {details, planets, starships} from '../../services/globalSelectors'
 
 import styles from './Details.module.scss'
-import {reset} from "../../services/collections/actions";
-import {handleOpenModal} from "../../services/overlay/actions";
-import {details} from "../../services/globalSelectors";
 
 export const Details = () => {
-  const {location: {state: locationState}} = useSelector(details)
-  const {title, episode_id, opening_crawl, director, producer, release_date, created, edited} = locationState
-
   const dispatch = useDispatch()
+  const planetsList = useSelector(planets)
+  const starshipsList = useSelector(starships)
+
+  const {
+    title, episode_id, opening_crawl,
+    director, producer, release_date,
+    created, edited
+  } = useSelector(details)
+
 
   const handleOpen = () => dispatch(handleOpenModal.setFalse())
 
   useEffect(() => {
     dispatch(getPlanetsFetch(episode_id))
-    // dispatch(getStarshipsFetch(episode_id))
+    dispatch(getStarshipsFetch(episode_id))
 
     return () => dispatch(reset.details())
   }, [dispatch])
@@ -27,7 +32,10 @@ export const Details = () => {
   return (
     <section className={styles.wrapper}>
       <div className='wrap '>
-        <button onClick={handleOpen} style={{textDecoration: 'none', color: 'rgba(255, 255, 0, .8)'}}>
+        <button
+          onClick={handleOpen}
+          style={{textDecoration: 'none', color: 'rgba(255, 255, 0, .8)'}}
+        >
           &lt; Back
         </button>
         <div className='mt-5'>
@@ -39,12 +47,22 @@ export const Details = () => {
             <p>Producer : {producer}</p>
             <p>Release date : {release_date}</p>
             <p>Planet :</p>
-            <div>
-              planetsList
-            </div>
+            <ul>
+              {
+                !!planetsList.length
+                  ? planetsList.map(el => <li key={el.name}>{el.name}</li>)
+                  : <li>loading...</li>
+              }
+            </ul>
             <p>StarShips : </p>
             <div>
-              starshipsList
+              <ul>
+                {
+                  !!starshipsList.length
+                    ? starshipsList.map(el => <li key={el.name}>{el.name}</li>)
+                    : <li>loading...</li>
+                }
+              </ul>
             </div>
             <p>Created : {created}</p>
             <p>Edited : {edited}</p>

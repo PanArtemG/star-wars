@@ -1,7 +1,9 @@
 .wrapper {
+  padding: 4rem;
   position: fixed;
   height: 100vh;
   width: 100vw;
   left: 0;
   top: 0;
+  overflow-y: auto;
 }
