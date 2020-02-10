@@ -27,7 +27,7 @@ export const Details = () => {
     dispatch(getStarshipsFetch(episode_id))
 
     return () => dispatch(reset.details())
-  }, [dispatch])
+  }, [episode_id, dispatch])
 
   return (
     <section className={styles.wrapper}>
@@ -36,7 +36,7 @@ export const Details = () => {
           className={styles.btn}
           onClick={handleOpen}
         >
-          &lt Back
+          &lt; Back
         </button>
         <div className='mt-5'>
           <h2 className=' mb-5'>'{title}'</h2>

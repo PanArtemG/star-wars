@@ -18,7 +18,7 @@ export const Collection = () => {
 
   useEffect(() => {
     !collectionArr.length && dispatch(getFilmsFetch())
-  }, [])
+  }, [collectionArr.length, dispatch])
 
   return (
     <>

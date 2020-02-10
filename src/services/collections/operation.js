@@ -26,7 +26,7 @@ export const getPlanetsFetch = episode_id => (dispatch, getState) => {
     .split(GET_COLLECTION_URL('planets'))[1]
     .split('/')[0])
 
-  for (let i = 1 i < getMaxOfArray(ids) || i === 1 i++) {
+  for (let i = 1; i < getMaxOfArray(ids) || i === 1; i++) {
     const options = {
       method: 'GET',
       url: GET_COLLECTION_URL('planets', i)
@@ -52,7 +52,7 @@ export const getStarshipsFetch = episode_id => (dispatch, getState) => {
     .split(GET_COLLECTION_URL('starships'))[1]
     .split('/')[0])
 
-  for (let i = 1 i < getMaxOfArray(ids) || i === 1 i++) {
+  for (let i = 1; i < getMaxOfArray(ids) || i === 1; i++) {
     const options = {
       method: 'GET',
       url: GET_COLLECTION_URL('starships', i)
