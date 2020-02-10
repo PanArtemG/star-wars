@@ -14,7 +14,7 @@ export const Collection = () => {
 
   useEffect(() => {
     dispatch(getCollectionFetch())
-  }, [dispatch])
+  }, [])
 
   return (
     <>

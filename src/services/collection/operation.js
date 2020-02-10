@@ -16,15 +16,15 @@ export const getCollectionFetch = () => dispatch => {
     .catch(error => dispatch(get.collection.error(error)))
 }
 
-export const getCurrentItemFetch = credential => dispatch => {
-  dispatch(get.currentItem.request())
-  console.log(GET_CURRENT_ITEM_URL(credential),'  vGET_CURRENT_ITEM_URL(credential)')
-  const options = {
-    method: 'GET',
-    url: GET_CURRENT_ITEM_URL(credential),
-  }
+// export const getCurrentItemFetch = credential => dispatch => {
+//   dispatch(get.currentItem.request())
+//   console.log(GET_CURRENT_ITEM_URL(credential),'  vGET_CURRENT_ITEM_URL(credential)')
+//   const options = {
+//     method: 'GET',
+//     url: GET_CURRENT_ITEM_URL(credential),
+//   }
 
-  axios(options)
-    .then(({data}) => dispatch(get.currentItem.success(data)))
-    .catch(error => dispatch(get.currentItem.error(error)))
-}
+//   axios(options)
+//     .then(({data}) => dispatch(get.currentItem.success(data)))
+//     .catch(error => dispatch(get.currentItem.error(error)))
+// }

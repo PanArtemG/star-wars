@@ -3,10 +3,12 @@ import {createLogger} from 'redux-logger'
 import thunkMiddleware from 'redux-thunk'
 import {collectionReducer} from './collection/reducer'
 import {searchReducer} from './search/reducer'
+import {episodeReducer} from './episode/reducer'
 
 const rootReducer = combineReducers({
   collection: collectionReducer,
-  search: searchReducer
+  search: searchReducer,
+  episode: episodeReducer
 })
 
 const loggerMiddleware = createLogger({

@@ -4,9 +4,9 @@ import {handle} from "../../services/search/actions";
 import {searchValue, collection} from "../../services/globalSelectors";
 
 export const Search = () => {
+  const dispatch = useDispatch()
   const value = useSelector(searchValue)
   const collectionItems = useSelector(collection)
-  const dispatch = useDispatch()
 
   const handleValue = ({target: {value}}) => {
     const lowerCaseValue = value.toLowerCase()
