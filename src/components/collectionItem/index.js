@@ -1,15 +1,18 @@
 import React from 'react'
-import {Link} from 'react-router-dom'
+import {useDispatch} from "react-redux";
+import {handleOpenModal} from '../../services/overlay/actions'
+
 import './collectionItem.scss'
 
 export const CollectionItem = props => {
+  const dispatch = useDispatch()
   const {title, episode_id, release_date, opening_crawl} = props
+
+  const handleModal = () => dispatch(handleOpenModal.setTrue(props))
+
   return (
     <div className='wrap h-50 w-25 p-2'>
-      <Link className='film-wrap' to={{
-        pathname: `/episode/`,
-        state: {...props}
-      }}>
+      <button className='film-wrap' onClick={handleModal}>
         <div className='film-wrap-title view view-cascade gradient-card-header peach-gradient'>
           <h3 className='card-title card-header-title mb-3'>'{title}'</h3>
           <div>
@@ -24,7 +27,7 @@ export const CollectionItem = props => {
           <h6 className='card-body-title'>Spoiler:</h6>
           <p className='card-body-text'>{opening_crawl.substr(0, 75)}...</p>
         </div>
-      </Link>
+      </button>
     </div>
   )
 }

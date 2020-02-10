@@ -1,21 +1,22 @@
 import React, {useEffect} from 'react'
 import {useDispatch, useSelector} from 'react-redux'
-import {getCollectionFetch} from '../../services/collection/operation'
-import {collection, searchItems, searchValue} from '../../services/globalSelectors'
+
+import {getFilmsFetch} from '../../services/collections/operation'
+import {searchItems, searchValue, films} from '../../services/globalSelectors'
 import {CollectionItem, Spinner, Search} from '../../components/'
 
 import './style.scss'
 
 export const Collection = () => {
   const dispatch = useDispatch()
-  const collectionArr = useSelector(collection)
+  const collectionArr = useSelector(films)
   const searchItemsArr = useSelector(searchItems)
   const searchValueString = useSelector(searchValue)
 
   const currentArray = searchValueString ? searchItemsArr : collectionArr
 
   useEffect(() => {
-    dispatch(getCollectionFetch())
+    !collectionArr.length && dispatch(getFilmsFetch())
   }, [])
 
   return (

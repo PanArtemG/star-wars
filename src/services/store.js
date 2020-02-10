@@ -1,14 +1,15 @@
 import {createStore, applyMiddleware, compose, combineReducers} from 'redux'
 import {createLogger} from 'redux-logger'
 import thunkMiddleware from 'redux-thunk'
-import {collectionReducer} from './collection/reducer'
+
+import {collectionsReducer} from './collections/reducer'
 import {searchReducer} from './search/reducer'
-import {episodeReducer} from './episode/reducer'
+import {overlayReducer} from './overlay/reducer'
 
 const rootReducer = combineReducers({
-  collection: collectionReducer,
+  collections: collectionsReducer,
   search: searchReducer,
-  episode: episodeReducer
+  overlay: overlayReducer
 })
 
 const loggerMiddleware = createLogger({

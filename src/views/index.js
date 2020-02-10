@@ -1,2 +1,2 @@
 export {Collection} from './Collection'
-export {Episode} from './Episode'
+export {Details} from './Details'
