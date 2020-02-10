@@ -1,0 +1,17 @@
+.search, .search:focus, .search:active {
+
+  margin: 20px 0;
+  height: 30%;
+  width: 30%;
+  padding: 10px 15px;
+  background: rgba(255, 255, 0, .5);
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  color: white;
+}
+
+.search::placeholder {
+  color: white;
+}
+

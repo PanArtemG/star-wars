@@ -3,6 +3,8 @@ import {useDispatch, useSelector} from "react-redux";
 import {handle} from "../../services/search/actions";
 import {searchValue, collection} from "../../services/globalSelectors";
 
+import './style.scss';
+
 export const Search = () => {
   const dispatch = useDispatch()
   const value = useSelector(searchValue)
@@ -19,7 +21,7 @@ export const Search = () => {
 
   return (
     <>
-      <input value={value} onChange={handleValue} type='text' placeholder='Search'/>
+      <input className='search' value={value} onChange={handleValue} type='text' placeholder='Search'/>
     </>
   )
 }

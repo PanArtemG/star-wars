@@ -4,6 +4,8 @@ import {getEpisodeItemsFetch} from "../../services/episode/operation";
 import {planets, starships} from "../../services/episode/selectors";
 import {Link} from "react-router-dom";
 
+import './style.scss'
+
 export const Episode = props => {
     const {location: {state: locationState}} = props
     const {title, episode_id, opening_crawl, director, producer, release_date, created, edited} = locationState
@@ -19,13 +21,13 @@ export const Episode = props => {
     }, [dispatch])
 
 
-    const Planets = () => planetsList.map(planet => <p>{planet}</p>)
+    const Planets = () => planetsList.map(planet => <span>{planet}</span>)
 
     return (
         <div className='wrap '>
-            <Link to='/'> &lt; Back </Link>
-            <div>
-                <h2>"{title}"</h2>
+            <Link style={{ textDecoration: 'none', color: 'rgba(255, 255, 0, .8)' }} to='/'> &lt; Back </Link>
+            <div className='mt-5'>
+                <h2 className=' mb-5'>"{title}"</h2>
                 <h4>Episode : #{episode_id}</h4>
                 <div className=''>
                     <p>{opening_crawl}</p>

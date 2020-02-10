@@ -1,6 +1,6 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
-import './style.scss'
+import './collectionItem.scss'
 
 export const CollectionItem = props => {
   const {title, episode_id, release_date, opening_crawl} = props
