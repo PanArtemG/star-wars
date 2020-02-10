@@ -2,7 +2,7 @@ import React from 'react'
 import {Link} from 'react-router-dom'
 import './style.scss'
 
-const CollectionItem = props => {
+export const CollectionItem = props => {
   const {title, episode_id, release_date, opening_crawl} = props
   return (
     <div className='wrap h-50 w-25 p-2'>
@@ -28,5 +28,3 @@ const CollectionItem = props => {
     </div>
   )
 }
-
-export default CollectionItem

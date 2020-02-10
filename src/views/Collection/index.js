@@ -2,9 +2,7 @@ import React, {useEffect} from 'react'
 import {useDispatch, useSelector} from 'react-redux'
 import {getCollectionFetch} from '../../services/collection/operation'
 import {collection, searchItems, searchValue} from '../../services/globalSelectors'
-import Spinner from '../../components/spinner'
-import CollectionItem from '../../components/collectionItem'
-import {Search} from '../../components/search/Search'
+import {CollectionItem, Spinner, Search} from '../../components/'
 
 export const Collection = () => {
   const dispatch = useDispatch()
@@ -39,6 +37,3 @@ export const Collection = () => {
     </>
   )
 }
-//   <Link to={`/episode/${episode_id}`} key={index}>
-//                 Episode {episode_id}
-//               </Link>
