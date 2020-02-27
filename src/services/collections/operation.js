@@ -17,7 +17,8 @@ export const getFilmsFetch = () => dispatch => {
 
 export const getPlanetsFetch = episode_id => (dispatch, getState) => {
   dispatch(get.planets.request())
-
+// Функция для вычесления порядкового номера страницы на которой находится искомый айтем с максимальным значением
+// порядкового номера
   const getMaxOfArray = numArray => Math.ceil((Math.max.apply(null, numArray) + 1) / 10)
 
   const {films} = getState().collections
